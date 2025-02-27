@@ -6,7 +6,7 @@
 
 body {
     height: 100vh;
-    background-color: lavender;
+    background-color: cadetblue;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -38,7 +38,7 @@ body {
     font-size: smaller;
 }
 
-.start-screen button , .restart-btn {
+.start-screen button , .restart-btn  , #next-btn{
     padding : 8px 13px;
     border-radius: 10px;
     background-color: darksalmon;
@@ -48,14 +48,17 @@ body {
     color: honeydew;
 }
 
-.start-screen button:hover , .restart-btn:hover {
+.start-screen button:hover , .restart-btn:hover , #next-btn:hover {
     background-color: salmon;
-    scale: 1.1;
+    scale: 1.05;
     cursor: pointer;
 }
 
 .quiz-screen {
     margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
 }
 
 .quiz-screen .question{
@@ -72,6 +75,11 @@ body {
     line-height: 1.4;
 }
 
+#next-btn {
+    margin : 15px auto;
+    width: 100%;
+}
+
 
 .restart-btn {
     margin: 20px auto;
@@ -81,4 +89,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.score-box {
+    display: flex;
+    align-items: center;
+    gap : 10px;
 }

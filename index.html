@@ -11,36 +11,41 @@
         <section class="start-screen">
             <h1>Quiz App</h1>
             <p>Enjoy the game!!</p>
-            <button>Start Quiz</button>
         </section>
     
         <section class="quiz-screen">
             <p class="question" id="question1">What is your name?</p>
             <ul class="options-list">
                 <li class="option" id="option-1">
-                    <input type="radio" id="option1" name="option">
-                    <label for="option1">Rahul</label>
+                    <input type="radio" class="option-input" id="option1-input" name="option">
+                    <label class="option-label" for="option1-input" id="option-1-label">Rahul</label>
                 </li>
-                <li class="option" id="option-1">
-                    <input type="radio" id="option2" name="option">
-                    <label for="option2">Rahul</label>
+                <li class="option" id="option-2">
+                    <input type="radio" class="option-input" id="option2-input" name="option">
+                    <label  class="option-label" for="option2-input" id="option-2-label">Rahul</label>
                 </li>
-                <li class="option" id="option-1">
-                    <input type="radio" id="option3" name="option">
-                    <label for="option3">Rahul</label>
+                <li class="option" id="option-3">
+                    <input type="radio" id="option3-input" class="option-input" name="option">
+                    <label class="option-label" for="option3-input" id="option-3-label">Rahul</label>
                 </li>
-                <li class="option" id="option-1">
-                    <input type="radio" id="option4" name="option"  >
-                    <label for="option4">Rahul</label>
+                <li class="option" id="option-4">
+                    <input type="radio" id="option4-input" name="option" class="option-input" >
+                    <label class="option-label" for="option4-input" id="option-4-label">Rahul</label>
                 </li>
             </ul>
+
+            <button id="next-btn">Next</button>
         </section>
     
         <section class="score-screen">
-            <h1 class="final-score">Final Score : </h1>
+            <div class="score-box">
+                <h1 class="final-score">Final Score : </h1>
+                <p id="score">Score</p>
+            </div>
             <button class="restart-btn">Restart</button>
         </section>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
