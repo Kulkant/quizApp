@@ -43,18 +43,31 @@ function displayQuestion(index) {
 
 document.addEventListener("DOMContentLoaded", () => {
     displayQuestion(0);
+    startTimer();
 });
 
 const nextBtn = document.getElementById("next-btn");
 nextBtn.addEventListener("click", () => {
     if (index < questions.length) {
         checkAnswer(index);
-        index = index + 1;
-        displayQuestion(index);
+        nextQuestion();
+        resetTimer();
+        startTimer();
     }else {
         getResult();
     }
+
+    if(index < questions.length){
+        console.log(true);
+    }else {
+        console.log(false);
+    }
 })
+
+function nextQuestion() {
+    index = index + 1;
+    displayQuestion(index);
+}
 
 const restartBtn = document.querySelector(".restart-btn");
 restartBtn.addEventListener("click" , () => {
@@ -95,4 +108,32 @@ nextBtn.addEventListener("click" , () => {
 
 })
 
-    
+
+//timer logic
+let timeLeft = 10;
+let timerInterval;
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("time").innerText = timeLeft;
+        if(timeLeft === 0) {
+            clearInterval(timerInterval);
+            handleTimeUp();
+        }
+    }, 1000)
+}
+
+function handleTimeUp(){
+    alert("Time Up!!");
+    nextQuestion();
+    resetTimer();
+    startTimer();
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    timeLeft = 10;
+    document.getElementById('time').textContent = timeLeft;
+}
+
